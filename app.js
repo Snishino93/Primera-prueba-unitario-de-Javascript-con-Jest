@@ -1,36 +1,32 @@
-const sum = (a,b) => {
+const sum = (a, b) => {
     return a + b
 }
 
+const oneEuroIs = {
+    "USD": 1.2
+}
+const oneDollarIs = {
+    "YEN": 133.64
+}
+const oneYenIs = {
+    "GBP": 0.006
+}
+
 // declaramos una funcion con el mismo nombre "formEuroToDollar"
-const fromEuroToDollar = function(valueInEuro){
+const fromEuroToDollar = function (valueInEuro) {
     // convertimos el valor a dolares
     let valueInDollar = valueInEuro * 1.2;
     // retornamos el valor
-    return valueInDollar;
+    return Number(valueInDollar.toFixed(2));
 }
-const fromDollarToYen = function(valueInDollar){
-    // convertimos el valor a dolares
-    let valueInYen = valueInDollar * 133.0;
-    // retornamos el valor
-    return valueInYen;
+const fromDollarToYen = function (valueInDollar) {
+    let valueInYen = valueInDollar * 133.64;
+    return Number (valueInYen.toFixed(2));
 }
-const fromYenToPound = function(valueInYen){
-    // convertimos el valor a dolares
-    let valueInPound = valueInYen * 0.0060;
-    // retornamos el valor
-    return valueInPound;
+const fromYenToPound = function (valueInYen) {
+    let valueInPound = valueInYen * 0.006;
+    return Number(valueInPound.toFixed(3));
 }
-// one euro is:
-let oneEuroIs = {
-    "USD": 1.2, // us dollar
-}
-let oneDollarIs = {
-    "YEN": 133.0, // yen
-}
-let oneYenIs = {
-    "GBP": 0.0060, // pounds
-}
+
 // exporta la función para usarla en otros archivos 
-// (similar a la palabra clave `export` cuando se usa webpack)
 module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYenToPound };
